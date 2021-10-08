@@ -1,4 +1,5 @@
 syntax = "proto3";
+package ck;
 
 message RobotStatus {
     enum RobotState {
