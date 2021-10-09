@@ -15,5 +15,5 @@ message RobotStatus {
     RobotState robot_state = 1;
     Alliance alliance = 2;
     double match_time = 3;
-    string game_data = 4;
+    bytes game_data = 4;
 }
