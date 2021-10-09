@@ -1,0 +1,12 @@
+syntax = "proto3";
+package ck;
+
+message RobotJoystickStatus {
+    message Joystick {
+        int32 index = 1;
+        repeated float axes = 2;
+        uint32 buttons = 3;
+        repeated int32 povs = 4;
+    }
+    repeated Joystick joysticks = 1;
+}
