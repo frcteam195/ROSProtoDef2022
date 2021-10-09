@@ -1,0 +1,77 @@
+syntax = "proto3";
+package ck;
+
+message MotorControl {
+    message Motor {
+        enum ControllerType
+        {
+            TALON_FX = 0;
+            TALON_SRX = 1;
+        };
+
+        enum ControlMode
+        {
+            PercentOutput = 0;
+            Position = 1;
+            Velocity = 2;
+            Current = 3;
+            Follower = 4;
+            MotionProfile = 5;
+            MotionMagic = 6;
+            MotionProfileArc = 7;
+            MusicTone = 8;
+            Disabled = 9;
+        };
+
+        message MotorControllerConfiguration
+        {
+            enum InvertType
+            {
+                None = 0;
+                InvertMotorOutput = 1;
+                FollowMaster = 2;
+                OpposeMaster = 3;
+            };
+
+            enum NeutralMode
+            {
+                EEPROMSetting = 0;
+                Coast = 1;
+                Brake = 2;
+            };
+            
+            double kP = 1;
+            double kI = 2;
+            double kD = 3;
+            double kF = 4;
+            double iZone = 5;
+            double max_i_accum = 6;
+            double allowed_closed_loop_error = 7;
+            double max_closed_loop_peak_output = 8;
+            double motion_cruise_velocity = 9;
+            double motion_acceleration = 10;
+            int32 motion_s_curve_strength = 11;
+            double forward_soft_limit = 12;
+            bool forward_soft_limit_enable = 13;
+            double reverse_soft_limit = 14;
+            bool reverse_soft_limit_enable = 15;
+            double sensor_feedback_sensor_coefficient = 16;
+            double voltage_compensation_saturation = 17;
+            bool voltage_compensation_enabled = 18;
+            InvertType invert_type = 19;
+            bool sensor_phase_inverted = 20;
+            NeutralMode neutral_mode = 21;
+            double open_loop_ramp = 22;
+            double closed_loop_ramp = 23;
+        };
+
+        int32 id = 1;
+        ControllerType controller_type = 2;
+        ControlMode control_mode = 3;
+        double output_value = 4;
+        double arbitrary_feedforward = 5;
+        MotorControllerConfiguration motor_configuration = 6;
+    };
+
+    repeated Motor motors = 1;
+};

@@ -1,0 +1,13 @@
+syntax = "proto3";
+package ck;
+
+message MotorStatus {
+    message Motor {
+        double sensor_position = 1;
+        double sensor_velocity = 2;
+        double bus_voltage = 3;
+        double bus_current = 4;
+    };
+
+    repeated Motor motors = 1;
+};
