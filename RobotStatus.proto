@@ -8,5 +8,12 @@ message RobotStatus {
         AUTONOMOUS = 2;
         TEST = 3;
     }
+    enum Alliance {
+        RED = 0;
+        BLUE = 1;
+    }
     RobotState robot_state = 1;
+    Alliance alliance = 2;
+    double match_time = 3;
+    string game_data = 4;
 }
