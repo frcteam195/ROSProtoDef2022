@@ -63,6 +63,7 @@ message MotorControl {
             NeutralMode neutral_mode = 21;
             double open_loop_ramp = 22;
             double closed_loop_ramp = 23;
+            bool fast_master = 24;
         };
 
         int32 id = 1;
