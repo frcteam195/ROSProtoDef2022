@@ -3,6 +3,12 @@ package ck;
 
 message MotorConfiguration {
     message Motor {
+        enum ControllerType
+        {
+            TALON_FX = 0;
+            TALON_SRX = 1;
+        };
+
         message MotorControllerConfiguration
         {
             enum InvertType
@@ -47,7 +53,8 @@ message MotorConfiguration {
         };
 
         int32 id = 1;
-        MotorControllerConfiguration motor_configuration = 2;
+        ControllerType controller_type = 2;
+        MotorControllerConfiguration motor_configuration = 3;
     };
 
     repeated Motor motors = 1;
