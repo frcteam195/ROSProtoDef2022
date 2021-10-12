@@ -15,12 +15,12 @@ message MotorControl {
             Position = 1;
             Velocity = 2;
             Current = 3;
-            Follower = 4;
-            MotionProfile = 5;
-            MotionMagic = 6;
-            MotionProfileArc = 7;
-            MusicTone = 8;
-            Disabled = 9;
+            Follower = 5;
+            MotionProfile = 6;
+            MotionMagic = 7;
+            MotionProfileArc = 10;
+            MusicTone = 13;
+            Disabled = 15;
         };
 
         int32 id = 1;
