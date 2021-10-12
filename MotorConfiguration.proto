@@ -1,6 +1,6 @@
 syntax = "proto3";
 package ck;
-
+//Coprocessor -> RIO
 message MotorConfiguration {
     message Motor {
         enum ControllerType

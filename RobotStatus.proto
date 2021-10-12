@@ -1,6 +1,6 @@
 syntax = "proto3";
 package ck;
-
+//RIO -> Coprocessor
 message RobotStatus {
     enum RobotState {
         DISABLED = 0;
