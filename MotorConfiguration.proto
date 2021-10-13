@@ -9,6 +9,13 @@ message MotorConfiguration {
             TALON_SRX = 1;
         };
 
+        enum ControllerMode
+        {
+            MASTER = 0;
+            FAST_MASTER = 1;
+            SLAVE = 2;
+        };
+
         message MotorControllerConfiguration
         {
             enum InvertType
@@ -57,14 +64,14 @@ message MotorConfiguration {
             NeutralMode neutral_mode = 21;
             double open_loop_ramp = 22;
             double closed_loop_ramp = 23;
-            bool fast_master = 24;
-            CurrentLimitConfiguration supply_current_limit_config = 25;
-            CurrentLimitConfiguration stator_current_limit_config = 26;
+            CurrentLimitConfiguration supply_current_limit_config = 24;
+            CurrentLimitConfiguration stator_current_limit_config = 25;
         };
 
         int32 id = 1;
         ControllerType controller_type = 2;
-        MotorControllerConfiguration motor_configuration = 3;
+        ControllerMode controller_mode = 3;
+        MotorControllerConfiguration motor_configuration = 4;
     };
 
     repeated Motor motors = 1;
