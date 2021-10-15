@@ -1,6 +1,7 @@
 syntax = "proto3";
 package ck;
 //RIO -> Coprocessor
+//ZMQ group name "motorstatus"
 message MotorStatus {
     message Motor {
         int32 id = 1;

@@ -1,6 +1,7 @@
 syntax = "proto3";
 package ck;
 //Coprocessor -> RIO
+//ZMQ group name "motorconfig"
 message MotorConfiguration {
     message Motor {
         enum ControllerType
