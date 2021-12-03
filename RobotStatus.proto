@@ -2,6 +2,11 @@ syntax = "proto3";
 package ck;
 //RIO -> Coprocessor
 message RobotStatus {
+    message IMUData {
+        double yaw = 1;
+        double pitch = 2;
+        double roll = 3;
+    }
     enum RobotState {
         DISABLED = 0;
         TELEOP = 1;
@@ -16,4 +21,5 @@ message RobotStatus {
     Alliance alliance = 2;
     double match_time = 3;
     bytes game_data = 4;
+    IMUData imu_sensor = 5;
 }
