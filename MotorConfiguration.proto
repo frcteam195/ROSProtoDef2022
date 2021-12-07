@@ -17,62 +17,57 @@ message MotorConfiguration {
             SLAVE = 2;
         };
 
-        message MotorControllerConfiguration
+        enum InvertType
         {
-            enum InvertType
-            {
-                None = 0;
-                InvertMotorOutput = 1;
-                FollowMaster = 2;
-                OpposeMaster = 3;
-            };
-
-            enum NeutralMode
-            {
-                EEPROMSetting = 0;
-                Coast = 1;
-                Brake = 2;
-            };
-
-            message CurrentLimitConfiguration
-            {
-                bool enable = 1;
-                double current_limit = 2;
-                double trigger_threshold_current = 3;
-                double trigger_threshold_time = 4;
-            }
-            
-            double kP = 1;
-            double kI = 2;
-            double kD = 3;
-            double kF = 4;
-            double iZone = 5;
-            double max_i_accum = 6;
-            double allowed_closed_loop_error = 7;
-            double max_closed_loop_peak_output = 8;
-            double motion_cruise_velocity = 9;
-            double motion_acceleration = 10;
-            int32 motion_s_curve_strength = 11;
-            double forward_soft_limit = 12;
-            bool forward_soft_limit_enable = 13;
-            double reverse_soft_limit = 14;
-            bool reverse_soft_limit_enable = 15;
-            double feedback_sensor_coefficient = 16;
-            double voltage_compensation_saturation = 17;
-            bool voltage_compensation_enabled = 18;
-            InvertType invert_type = 19;
-            bool sensor_phase_inverted = 20;
-            NeutralMode neutral_mode = 21;
-            double open_loop_ramp = 22;
-            double closed_loop_ramp = 23;
-            CurrentLimitConfiguration supply_current_limit_config = 24;
-            CurrentLimitConfiguration stator_current_limit_config = 25;
+            None = 0;
+            InvertMotorOutput = 1;
+            FollowMaster = 2;
+            OpposeMaster = 3;
         };
+
+        enum NeutralMode
+        {
+            EEPROMSetting = 0;
+            Coast = 1;
+            Brake = 2;
+        };
+
+        message CurrentLimitConfiguration
+        {
+            bool enable = 1;
+            double current_limit = 2;
+            double trigger_threshold_current = 3;
+            double trigger_threshold_time = 4;
+        }
 
         int32 id = 1;
         ControllerType controller_type = 2;
         ControllerMode controller_mode = 3;
-        MotorControllerConfiguration motor_configuration = 4;
+        double kP = 4;
+        double kI = 5;
+        double kD = 6;
+        double kF = 7;
+        double iZone = 8;
+        double max_i_accum = 9;
+        double allowed_closed_loop_error = 10;
+        double max_closed_loop_peak_output = 11;
+        double motion_cruise_velocity = 12;
+        double motion_acceleration = 13;
+        int32 motion_s_curve_strength = 14;
+        double forward_soft_limit = 15;
+        bool forward_soft_limit_enable = 16;
+        double reverse_soft_limit = 17;
+        bool reverse_soft_limit_enable = 18;
+        double feedback_sensor_coefficient = 19;
+        double voltage_compensation_saturation = 20;
+        bool voltage_compensation_enabled = 21;
+        InvertType invert_type = 22;
+        bool sensor_phase_inverted = 23;
+        NeutralMode neutral_mode = 24;
+        double open_loop_ramp = 25;
+        double closed_loop_ramp = 26;
+        CurrentLimitConfiguration supply_current_limit_config = 27;
+        CurrentLimitConfiguration stator_current_limit_config = 28;
     };
 
     repeated Motor motors = 1;
