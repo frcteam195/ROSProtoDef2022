@@ -11,7 +11,7 @@ all:
 
 proto:
 	@mkdir -p out
-	@protoc --cpp_out=./out *.proto 
+	@/usr/local/bin/protoc --cpp_out=./out *.proto 
 
 $(LIB_x86_64): proto
 ifneq ("$(wildcard $(LIB_x86_64))","")
