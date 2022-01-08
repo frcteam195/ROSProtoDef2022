@@ -7,6 +7,7 @@ message IMUData {
         double yaw = 1;
         double pitch = 2;
         double roll = 3;
+        double yawrate = 4;
     }
 
     repeated IMUSensorData imu_sensor = 1;
