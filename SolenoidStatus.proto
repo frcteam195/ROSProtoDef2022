@@ -1,0 +1,20 @@
+syntax = "proto3";
+package ck;
+//RIO -> Coprocessor
+//ZMQ group name "solenoidstatus"
+message SolenoidStatus {
+    message Solenoid {
+        enum SolenoidValue
+        {
+            OFF = 0;
+            ON = 1;
+            FORWARD = 1;
+            REVERSE = 2;
+        }
+
+        int32 id = 1;
+        SolenoidValue solenoid_value = 2;
+    };
+
+    repeated Solenoid solenoids = 1;
+};

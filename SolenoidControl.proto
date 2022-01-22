@@ -1,0 +1,35 @@
+syntax = "proto3";
+package ck;
+//Coprocessor -> RIO
+//ZMQ group name "solenoidcontrol"
+message SolenoidControl {
+    message Solenoid {
+        enum SolenoidType
+        {
+            SINGLE = 0;
+            DOUBLE = 1;
+        };
+
+        enum ModuleType
+        {
+            CTREPCM = 0;
+            REVPH = 1;
+        }
+
+        enum SolenoidValue
+        {
+            OFF = 0;
+            ON = 1;
+            FORWARD = 1;
+            REVERSE = 2;
+        }
+
+        int32 id = 1;
+        int32 id2 = 2;
+        SolenoidType solenoid_type = 3;
+        ModuleType module_type = 4;
+        SolenoidValue output_value = 5;
+    };
+
+    repeated Solenoid solenoids = 1;
+};
