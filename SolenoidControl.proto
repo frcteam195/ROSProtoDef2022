@@ -1,6 +1,5 @@
 syntax = "proto3";
 package ck;
-option allow_alias = true;
 //Coprocessor -> RIO
 //ZMQ group name "solenoidcontrol"
 message SolenoidControl {
@@ -19,6 +18,7 @@ message SolenoidControl {
 
         enum SolenoidValue
         {
+            option allow_alias = true;
             OFF = 0;
             ON = 1;
             FORWARD = 1;

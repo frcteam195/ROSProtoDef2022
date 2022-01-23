@@ -1,12 +1,12 @@
 syntax = "proto3";
 package ck;
-option allow_alias = true;
 //RIO -> Coprocessor
 //ZMQ group name "solenoidstatus"
 message SolenoidStatus {
     message Solenoid {
         enum SolenoidValue
         {
+            option allow_alias = true;
             OFF = 0;
             ON = 1;
             FORWARD = 1;
