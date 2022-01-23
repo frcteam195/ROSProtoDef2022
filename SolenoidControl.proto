@@ -1,5 +1,6 @@
 syntax = "proto3";
 package ck;
+option allow_alias = true;
 //Coprocessor -> RIO
 //ZMQ group name "solenoidcontrol"
 message SolenoidControl {
