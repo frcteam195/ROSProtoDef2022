@@ -15,6 +15,7 @@ message MotorConfiguration {
             MASTER = 0;
             FAST_MASTER = 1;
             SLAVE = 2;
+            INVALID = 3;
         };
 
         enum InvertType
