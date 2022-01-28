@@ -26,10 +26,9 @@ message SolenoidControl {
         }
 
         int32 id = 1;
-        int32 id2 = 2;
-        SolenoidType solenoid_type = 3;
-        ModuleType module_type = 4;
-        SolenoidValue output_value = 5;
+        SolenoidType solenoid_type = 2;
+        ModuleType module_type = 3;
+        SolenoidValue output_value = 4;
     };
 
     repeated Solenoid solenoids = 1;
