@@ -26,6 +26,23 @@ message MotorConfiguration {
             OpposeMaster = 3;
         };
 
+        enum LimitSwitchSource
+        {
+            option allow_alias = true;
+            LimitSwitchSource_FeedbackConnector = 0;
+            LimitSwitchSource_RemoteTalon = 1;
+            LimitSwitchSource_RemoteTalonSRX = 1;
+            LimitSwitchSource_RemoteCANifier = 2;
+            LimitSwitchSource_Deactivated = 3;
+        };
+
+        enum LimitSwitchNormal
+        {
+            LimitSwitchNormal_NormallyOpen = 0;
+            LimitSwitchNormal_NormallyClosed = 1;
+            LimitSwitchNormal_Disabled = 2;
+        };
+
         enum NeutralMode
         {
             EEPROMSetting = 0;
@@ -69,6 +86,10 @@ message MotorConfiguration {
         double closed_loop_ramp = 26;
         CurrentLimitConfiguration supply_current_limit_config = 27;
         CurrentLimitConfiguration stator_current_limit_config = 28;
+        LimitSwitchSource forward_limit_switch_source = 29;
+        LimitSwitchNormal forward_limit_switch_normal = 30;
+        LimitSwitchSource reverse_limit_switch_source = 31;
+        LimitSwitchNormal reverse_limit_switch_normal = 32;
     };
 
     repeated Motor motors = 1;
