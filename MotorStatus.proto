@@ -10,6 +10,8 @@ message MotorStatus {
         double bus_voltage = 4;
         double bus_current = 5;
         double stator_current = 6;
+        bool forward_limit_closed = 7;
+        bool reverse_limit_closed = 8;
     };
 
     repeated Motor motors = 1;
