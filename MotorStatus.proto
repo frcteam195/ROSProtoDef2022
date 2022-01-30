@@ -4,6 +4,20 @@ package ck;
 //ZMQ group name "motorstatus"
 message MotorStatus {
     message Motor {
+        enum ControlMode
+        {
+            PercentOutput = 0;
+            Position = 1;
+            Velocity = 2;
+            Current = 3;
+            Follower = 5;
+            MotionProfile = 6;
+            MotionMagic = 7;
+            MotionProfileArc = 10;
+            MusicTone = 13;
+            Disabled = 15;
+        };
+
         int32 id = 1;
         double sensor_position = 2;
         double sensor_velocity = 3;
@@ -12,6 +26,8 @@ message MotorStatus {
         double stator_current = 6;
         bool forward_limit_closed = 7;
         bool reverse_limit_closed = 8;
+        ControlMode control_mode = 9;
+        double commanded_output = 10;
     };
 
     repeated Motor motors = 1;
