@@ -29,18 +29,18 @@ message MotorConfiguration {
         enum LimitSwitchSource
         {
             option allow_alias = true;
-            LimitSwitchSource_FeedbackConnector = 0;
-            LimitSwitchSource_RemoteTalon = 1;
-            LimitSwitchSource_RemoteTalonSRX = 1;
-            LimitSwitchSource_RemoteCANifier = 2;
-            LimitSwitchSource_Deactivated = 3;
+            FeedbackConnector = 0;
+            RemoteTalon = 1;
+            RemoteTalonSRX = 1;
+            RemoteCANifier = 2;
+            Deactivated = 3;
         };
 
         enum LimitSwitchNormal
         {
-            LimitSwitchNormal_NormallyOpen = 0;
-            LimitSwitchNormal_NormallyClosed = 1;
-            LimitSwitchNormal_Disabled = 2;
+            NormallyOpen = 0;
+            NormallyClosed = 1;
+            Disabled = 2;
         };
 
         enum NeutralMode
