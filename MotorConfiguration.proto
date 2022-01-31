@@ -90,6 +90,8 @@ message MotorConfiguration {
         LimitSwitchNormal forward_limit_switch_normal = 30;
         LimitSwitchSource reverse_limit_switch_source = 31;
         LimitSwitchNormal reverse_limit_switch_normal = 32;
+        double peak_output_forward = 33;
+        double peak_output_reverse = 34;
     };
 
     repeated Motor motors = 1;
