@@ -28,6 +28,13 @@ message MotorStatus {
         bool reverse_limit_closed = 8;
         ControlMode control_mode = 9;
         double commanded_output = 10;
+        double active_trajectory_arbff = 11;
+        double active_trajectory_position = 12;
+        double active_trajectory_velocity = 13;
+        double raw_closed_loop_error = 14;
+        double raw_integral_accum = 15;
+        double raw_error_derivative = 16;
+        double raw_output_percent = 17;
     };
 
     repeated Motor motors = 1;
