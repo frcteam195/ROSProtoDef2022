@@ -4,10 +4,11 @@ package ck;
 
 message IMUData {
     message IMUSensorData {
-        double yaw = 1;
-        double pitch = 2;
-        double roll = 3;
-        double yawrate = 4;
+        int32 id = 1;
+        double w = 2;
+        double x = 3;
+        double y = 4;
+        double z = 5;
     }
 
     repeated IMUSensorData imu_sensor = 1;

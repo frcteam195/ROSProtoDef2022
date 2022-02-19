@@ -1,0 +1,29 @@
+syntax = "proto3";
+package ck;
+//Coprocessor -> RIO
+
+message IMUConfig {
+    message IMUConfigData {
+        enum IMUType
+        {
+            PIGEON2 = 0;
+            NAVX = 1;
+        };
+
+        enum AxisDirection {
+            PositiveZ = 0;
+            PositiveY = 1;
+            PositiveX = 2;
+            NegativeZ = 3;
+            NegativeY = 4;
+            NegativeX = 5;
+        };
+
+        int32 id = 1;
+        IMUType imu_type = 2;
+        AxisDirection mount_pose_axis_forward = 5;
+        AxisDirection mount_pose_axis_up = 6;
+    }
+
+    repeated IMUConfigData imu_config = 1;
+}
