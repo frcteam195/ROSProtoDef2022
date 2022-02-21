@@ -1,6 +1,7 @@
 syntax = "proto3";
 package ck;
 //Coprocessor -> RIO
+import "CANNetwork.proto";
 
 message IMUConfig {
     message IMUConfigData {
@@ -21,8 +22,9 @@ message IMUConfig {
 
         int32 id = 1;
         IMUType imu_type = 2;
-        AxisDirection mount_pose_axis_forward = 5;
-        AxisDirection mount_pose_axis_up = 6;
+        AxisDirection mount_pose_axis_forward = 3;
+        AxisDirection mount_pose_axis_up = 4;
+        CANNetwork can_network = 5;
     }
 
     repeated IMUConfigData imu_config = 1;

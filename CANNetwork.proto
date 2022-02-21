@@ -1,0 +1,8 @@
+syntax = "proto3";
+package ck;
+
+enum CANNetwork {
+    INTERNAL_CAN = 0;
+    RIO_CAN_FD = 1;
+    COPROCESSOR_CAN = 2;
+};
