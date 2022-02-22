@@ -1,6 +1,5 @@
 syntax = "proto3";
 package ck;
-import "CANNetwork.proto";
 
 //Coprocessor -> RIO
 //ZMQ group name "motorcontrol"
@@ -31,7 +30,6 @@ message MotorControl {
         ControlMode control_mode = 3;
         double output_value = 4;
         double arbitrary_feedforward = 5;
-        CANNetwork can_network = 6;
     };
 
     repeated Motor motors = 1;

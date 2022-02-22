@@ -1,5 +1,9 @@
 syntax = "proto3";
 package ck;
+
+import "CANNetwork.proto";
+
+
 //Coprocessor -> RIO
 //ZMQ group name "motorconfig"
 message MotorConfiguration {
@@ -92,6 +96,7 @@ message MotorConfiguration {
         LimitSwitchNormal reverse_limit_switch_normal = 32;
         double peak_output_forward = 33;
         double peak_output_reverse = 34;
+        CANNetwork can_network = 6;
     };
 
     repeated Motor motors = 1;
