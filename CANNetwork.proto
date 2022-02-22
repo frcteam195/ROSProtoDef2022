@@ -2,7 +2,7 @@ syntax = "proto3";
 package ck;
 
 enum CANNetwork {
-    INTERNAL_CAN = 0;
-    RIO_CAN_FD = 1;
+    RIO_INTERNAL_CAN = 0;
+    RIO_CANIVORE = 1;
     COPROCESSOR_CAN = 2;
 };
