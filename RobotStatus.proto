@@ -16,4 +16,5 @@ message RobotStatus {
     Alliance alliance = 2;
     double match_time = 3;
     bytes game_data = 4;
+    uint32 selected_auto = 5;
 }
