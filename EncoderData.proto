@@ -1,0 +1,14 @@
+syntax = "proto3";
+package ck;
+//RIO -> Coprocessor
+
+message EncoderData {
+    message EncoderSensorData {
+        int32 id = 1;
+        double sensor_position = 2;
+        double sensor_velocity = 3;
+        bool is_faulted = 4;
+    }
+
+    repeated EncoderSensorData encoder_sensor = 1;
+}
