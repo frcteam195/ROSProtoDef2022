@@ -20,6 +20,7 @@ message EncoderConfig {
         EncoderType encoder_type = 2;
         EncoderSensorSource sensor_source = 3;
         CANNetwork can_network = 4;
+        double magnetic_offset = 5;
     }
 
     repeated EncoderConfigData encoder_config = 1;
