@@ -97,6 +97,7 @@ message MotorConfiguration {
         double peak_output_forward = 33;
         double peak_output_reverse = 34;
         CANNetwork can_network = 35;
+        int32 feedback_sensor_can_id = 36;
     };
 
     repeated Motor motors = 1;
