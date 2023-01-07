@@ -27,7 +27,7 @@ message EncoderConfig {
         EncoderSensorSource sensor_source = 3;
         CANNetwork can_network = 4;
         double magnetic_offset = 5;
-        InitializationStrategy initialization_strategy = 5;
+        InitializationStrategy initialization_strategy = 6;
     }
 
     repeated EncoderConfigData encoder_config = 1;
