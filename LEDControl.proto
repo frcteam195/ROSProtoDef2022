@@ -1,0 +1,45 @@
+syntax = "proto3";
+package ck;
+//Coprocessor -> RIO
+import "CANNetwork.proto";
+import "RGBWColor.proto";
+import "LEDAnimation.proto";
+
+message LEDControl {
+    message LEDControlData {
+        enum LEDStripType
+        {
+            GRB = 0;
+            RGB = 1;
+            BRG = 2;
+            GRBW = 6;
+            RGBW = 7;
+            BRGW = 8;
+        };
+
+        enum VBATConfigType
+        {
+            On = 0;
+            Off = 1;
+            Modulated = 2;
+        };
+
+        enum LEDControlMode
+        {
+            Static = 0;
+            Blinking = 1;
+            Animated = 2;
+        }
+
+        int32 id = 1;
+        CANNetwork can_network = 2;
+        LEDStripType led_type = 2;
+        VBATConfigType vbat_config = 3;
+        double vbat_duty_cycle = 4;
+        LEDControlMode led_control_mode = 5;
+        RGBWColor color = 6;
+        LEDAnimation animation = 7;
+    }
+
+    repeated LEDControlData led_control = 1;
+}

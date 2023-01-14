@@ -1,0 +1,9 @@
+syntax = "proto3";
+package ck;
+
+message RGBWColor {
+    double R = 1;
+    double G = 2;
+    double B = 3;
+    double W = 4;
+}
