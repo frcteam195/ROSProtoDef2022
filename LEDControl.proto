@@ -6,6 +6,13 @@ import "RGBWColor.proto";
 import "LEDAnimation.proto";
 
 message LEDControl {
+    message LEDColor
+    {
+        RGBWColor color = 1;
+        int32 start_index = 2;
+        int32 num_leds = 3;
+    }
+
     message LEDControlData {
         enum LEDStripType
         {
