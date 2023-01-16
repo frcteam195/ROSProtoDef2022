@@ -1,5 +1,6 @@
 syntax = "proto3";
 package ck;
+import "RGBWColor.proto";
 
 message LEDAnimation {
     enum AnimationType
@@ -14,9 +15,19 @@ message LEDAnimation {
         TwinkleOff = 7;
     };
 
+    enum Direction
+    {
+        Forward = 0;
+        Backward = 1;
+    };
+
     int32 index = 1;
     double brightness = 2;
     double speed = 3;
     int32 num_led = 4;
-    AnimationType animation_type = 5;
+    RGBWColor color = 5;
+    AnimationType animation_type = 6;
+    Direction direction = 7;
+    int32 offset = 8;
+    int32 slot = 9;
 }

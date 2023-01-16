@@ -8,7 +8,7 @@ import "LEDAnimation.proto";
 message LEDControl {
     message LEDColor
     {
-        RGBWColor color = 1;
+        RGBWColor rgbw_color = 1;
         int32 start_index = 2;
         int32 num_leds = 3;
     }
@@ -44,8 +44,8 @@ message LEDControl {
         VBATConfigType vbat_config = 4;
         double vbat_duty_cycle = 5;
         LEDControlMode led_control_mode = 6;
-        RGBWColor color = 7;
-        LEDAnimation animation = 8;
+        LEDColor color = 7;
+        repeated LEDAnimation animation = 8;
     }
 
     repeated LEDControlData led_control = 1;
