@@ -9,6 +9,9 @@ message IMUData {
         double x = 3;
         double y = 4;
         double z = 5;
+        double x_rps = 6;
+        double y_rps = 7;
+        double z_rps = 8;
     }
 
     repeated IMUSensorData imu_sensor = 1;
