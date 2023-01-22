@@ -13,6 +13,7 @@ message LEDAnimation {
         SingleFade = 5;
         Twinkle = 6;
         TwinkleOff = 7;
+        Strobe = 8;
     };
 
     enum Direction
