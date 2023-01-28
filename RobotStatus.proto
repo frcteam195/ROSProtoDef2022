@@ -17,4 +17,5 @@ message RobotStatus {
     double match_time = 3;
     bytes game_data = 4;
     uint32 selected_auto = 5;
+    bool is_connected = 6;
 }
