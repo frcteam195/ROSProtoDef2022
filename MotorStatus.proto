@@ -35,6 +35,8 @@ message MotorStatus {
         double raw_integral_accum = 15;
         double raw_error_derivative = 16;
         double raw_output_percent = 17;
+        int32 faults = 18;
+        int32 sticky_faults = 19;
     };
 
     repeated Motor motors = 1;
