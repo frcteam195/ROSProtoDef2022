@@ -99,6 +99,10 @@ message MotorConfiguration {
         CANNetwork can_network = 35;
         int32 feedback_sensor_can_id = 36;
         int32 active_gain_slot = 37;
+        double kP_1 = 38;
+        double kI_1 = 39;
+        double kD_1 = 40;
+        double kF_1 = 41;
     };
 
     repeated Motor motors = 1;
