@@ -33,8 +33,9 @@ message LEDControl {
 
         enum LEDControlMode
         {
-            Static = 0;
-            Animated = 1;
+            Invalid = 0;
+            Static = 1;
+            Animated = 2;
         }
 
         int32 id = 1;
