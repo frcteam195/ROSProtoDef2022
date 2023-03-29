@@ -32,4 +32,5 @@ message SolenoidControl {
     };
 
     repeated Solenoid solenoids = 1;
+    bool compressor_is_enabled_for_auto = 2;
 };
